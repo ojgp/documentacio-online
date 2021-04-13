@@ -31,7 +31,7 @@ L’ús de l’arquitectura aporta avantatges, especialment, relacionats amb la 
 
 És per aquest motiu que s’estableixen uns **criteris d’aplicabilitat** per ajudar a la presa de decisió sobre l’ús de l’arquitectura. Aquests criteris es divideixen en **motivacions** que poden fer que una arquitectura de microserveis pugui ser beneficiosa per a un sistema i **condicionants** que hauria de complir el sistema per a poder-la aplicar amb garanties d’èxit.
 
-<img src="/images/img2.png" alt="Motivacions" />
+<img src="/images/img2.png" alt="Motivacions" width="20%" />
 
 Per d’altre banda, l’ús de l’arquitectura també implica uns condicionants que es poden classificar en diferents aspectes: solució, procés de construcció, equip i infraestructura de desplegament.
 
