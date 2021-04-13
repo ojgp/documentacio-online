@@ -31,7 +31,7 @@ L’ús de l’arquitectura aporta avantatges, especialment, relacionats amb la 
 
 És per aquest motiu que s’estableixen uns **criteris d’aplicabilitat** per ajudar a la presa de decisió sobre l’ús de l’arquitectura. Aquests criteris es divideixen en **motivacions** que poden fer que una arquitectura de microserveis pugui ser beneficiosa per a un sistema i **condicionants** que hauria de complir el sistema per a poder-la aplicar amb garanties d’èxit.
 
-![Motivacions](/images/img2.png)
+<img src="/images/img2.png" alt="Motivacions" />
 
 Per d’altre banda, l’ús de l’arquitectura també implica uns condicionants que es poden classificar en diferents aspectes: solució, procés de construcció, equip i infraestructura de desplegament.
 
@@ -245,6 +245,14 @@ La descripció dels blocs lògics de l’arquitectura d’execució són les seg
 
 ![Disseny lògic. Arquitectura d'execució](/images/img22.png)
 
+La capa frontend es compon dels següents blocs lògics :
+* **Aplicació contenidora**: És l'aplicació que compon les distintes vistes que formen el frontal. Això s'aconsegueix incrustant els diferents microfrontends, a la aplicació contenidora, mitjançant l'ús dels Custom Elements.  Els Custom Elements incrustats encapsulen els diferents microfrontends. Al carregar les pàgines, l'aplicació contenidora, permet, al navegador, aixecar una nova instància de cada microfrontend incrustat. D'aquesta manera es renderitza el HTML de cada un i es disponibilitza la seva funcionalitat.
+* **Microfrontends**: Cada bloc funcional ha d'implementar el seu propi microfrontend independent, de manera que s'asseguri la independència entre els diferents blocs funcionals. Els microfrontends podin ser desenvolupats en qualsevol llenguatge o framework de front-end acceptat per CTTI però és recomana mantenir l'homogeneïtat tecnològica dins de l’aplicació.
+* **Serveis HTTP Client**: Els serveis HTTP Client centralitzen els accessos als serveis backend. Totes les crides que es realitzen des de la capa frontend als serveis backend es canalitzen a través d'aquest servei. D'aquesta manera, es pot utilitzar un servei HTTP Client per afegir de forma centralitzada propietats comunes a les crides a la capa backend, com ara la injecció transparent d'un token JWT per a l'autenticació correcta en els serveis backend. A més, es pot utilitzar un servei de HTTP Client per a la gestió centralitzada d'errors en les crides als serveis backend. Els serveis HTTP s'encarreguen d'interceptar tot els errors per mostrar a l'usuari un missatge d'error adequat.
+* **Serveis de sessió**: Els serveis de sessió s'encarreguen de mantenir i gestionar la informació d'interès relativa a l'usuari que està utilitzant l'aplicació. Aquests serveis solen estar integrats amb els navegadors Web de cada usuari i solen guardar tant el token JWT de l’usuari como les seves propietats més rellevants, com el seu nom o els seus rols. Per això, els navegadors Web tenen incorporats un Session Storage, que es pot utilitzar per guardar dades temporals en el propi navegador de cada usuari. A més, també es poden utilitzar Cookies per guardar i gestionar informació relativa a la sessió de l'usuari en el seu navegador Web.
+* **Serveis d’autenticació i autorització**: Els serveis d’autenticació proporcionen les funcionalitats d’integració amb la gestió d’identitats i d’obtenció del token per accedir als serveis de backend. Quan l'usuari encara no està autenticat, els serveis d'autenticació s'encarreguen de mostrar el formulari de login i gestionar el procés d'autenticació amb la capa back perquè aquesta generi un token JWT. En una aplicació per al CTTI l'autenticació d'usuari se sol delegar a GICAR, qui mostra els formularis de login i valida les credencials introduïts.
+* **Serveis d’integració**: Els serveis d'integració centralitzen la comunicació entre els diferents components de la capa frontend. Per a això, l'aplicació contenidora es subscriu als esdeveniments emesos pels diferents microfrontends incrustats i els intercepta per propagar-les als microfrontends destí perquè aquests duguin a terme les accions corresponents, com ara un refresc de la interfície gràfica. De la mateixa manera, cada microfrontend hauria de disposar d'un servei que centralitza l'enviament de les seves diferents esdeveniments a l'aplicació contenidora.
+
 Els blocs lògics de l’arquitectura d’execució de backend són les següents:
 
 * **API Gateway**: Les funcionalitats de l'API Gateway es poden implementar amb un servei NGINX, utilitzant les imatges proporcionades pel CTTI que ja estan integrades amb Shibboleth.
@@ -257,7 +265,7 @@ Els blocs lògics de l’arquitectura d’execució de backend són les següent
 
 ##### 4.2.1.2 Arquitectura d’operació
 
-La descripció dels blocs lògics de l’arquitectura d’operació són les següents:
+Les solucions proposades per als blocs lògics de l'arquitectura d’operació són les següents:
 
 ![Disseny lògic. Arquitectura d'operació](/images/img26.png)
 
@@ -269,7 +277,7 @@ La descripció dels blocs lògics de l’arquitectura d’operació són les seg
 
 ##### 4.2.1.3 Arquitectura de desenvolupament
 
-A continuació, es descriuen els blocs lògics de l'arquitectura de desenvolupament, basant-se majoritàriament en les eines de les que disposa l'SIC (Servei d’Integració Continua) del CTTI. De forma general, en aquest apartat s'entén el codi des de un punt de vista ampli incloent també les definicions d’infraestructura.
+A continuació, es mostren les solucions recomanades per als blocs lògics de l'arquitectura de desenvolupament, basant-se majoritàriament en les eines de les que disposa l'SIC (Servei d’Integració Continua) del CTTI. De forma general, en aquest apartat s'entén el codi des de un punt de vista ampli incloent també les definicions d’infraestructura.
 
 ![Disseny lògic. Arquitectura de desenvolupament](/images/img27.png)
 
@@ -286,7 +294,7 @@ A continuació, es descriuen els blocs lògics de l'arquitectura de desenvolupam
 
 ##### 4.2.2.1 Arquitectura d’execució
 
-La descripció dels blocs lògics de l’arquitectura d’execució de frontend és la mateixa que en el disseny neutre pel que fa a el proveïdor de cloud, per tant, en aquest punt només es descriuen els punts referits a serveis de backend.
+La descripció dels blocs lògics de l’arquitectura d’execució de frontend és la mateixa que en el disseny neutre pel que fa a el proveïdor de cloud, per tant, en aquest punt només es mostren els serveis d'Azure recomanades per a la capa backend.
 
 ![Disseny lògic Azure. Arquitectura d'execució](/images/img28.png)
 
@@ -300,7 +308,7 @@ La descripció dels blocs lògics de l’arquitectura d’execució de frontend 
 
 ##### 4.2.2.2 Arquitectura d’operació
 
-La descripció dels blocs lògics de l’arquitectura d’operació són les següents:
+Per l'arquitectura d'operació es podrien utilitzar els següents serveis d'Azure:
 
 ![Disseny lògic Azure. Arquitectura d'operació](/images/img29.png)
 
@@ -319,7 +327,7 @@ El disseny físic identifica i descriu els components que formen part o integren
 
 ![Disseny físic basat en Azure](/images/img30.png)
 
-El disseny físic es basa en el disseny lògic basat en el cloud públic d'Azure. Dels serveis que ofereix Azure s'utilitzen sobre tot **Azure Kubernetes Service (AKS)**, **Grup de recurs**, **Application Gateway**, **Azure File Storage**, **Azure Cache**, **Azure Pipelines**, **Azure Repos**, **Azure Artifacts**, **Azure Container Registry**, **Azure Test Plans**, **Azure Key Vault**, **Azure Monitor** i **Azure App Insigths**. A més s'utilitzen **MongoDB Atlas** y **Confluent Cloud**.
+El disseny físic es basa en el disseny lògic basat en el cloud públic d'Azure. Dels serveis que ofereix Azure s'utilitzen sobre tot **Azure Kubernetes Service (AKS)**, **Grup de recurs**, **Application Gateway**, **Azure File Storage**, **Azure Cache**, **Azure Pipelines**, **Azure Repos**, **Azure Artifacts**, **Azure Container Registry**, **Azure Test Plans**, **Azure Key Vault**, **Azure Monitor** i **Azure App Insigths**. A més s'utilitzen **MongoDB Atlas** i **Confluent Cloud**.
 
 
 ## <a name="referencies"></a>Referències
