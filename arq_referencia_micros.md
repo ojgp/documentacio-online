@@ -31,7 +31,7 @@ L’ús de l’arquitectura aporta avantatges, especialment, relacionats amb la 
 
 És per aquest motiu que s’estableixen uns **criteris d’aplicabilitat** per ajudar a la presa de decisió sobre l’ús de l’arquitectura. Aquests criteris es divideixen en **motivacions** que poden fer que una arquitectura de microserveis pugui ser beneficiosa per a un sistema i **condicionants** que hauria de complir el sistema per a poder-la aplicar amb garanties d’èxit.
 
-<img src="/images/img2.png" alt="Motivacions" width="20%" />
+![Motivacions](/images/img2.png)
 
 Per d’altre banda, l’ús de l’arquitectura també implica uns condicionants que es poden classificar en diferents aspectes: solució, procés de construcció, equip i infraestructura de desplegament.
 
@@ -78,7 +78,7 @@ Per a cada bloc funcional, el desenvolupament hauria de seguir una metodologia B
 
 Com a conseqüència, per a cada bloc funcional s'hauria de crear un únic projecte, que contindrà tant la part front com la part back. Això té l'avantatge que cada bloc funcional podria ser desenvolupat per equips diferents i independents. A més, cada bloc funcional hauria de disposar de la seva pròpia base de dades.
 
-![Patró Backend for frontend](/images/img7.png)
+<img src="/images/img7.png" alt="Patró Backend for frontend" width="400px" />
 
 * **Frontend**: Conjunt de micro-frontends que proporcionen les funcionalitats del bloc al usuari.
 	* Només accedeix al seu backend.
@@ -91,7 +91,7 @@ Com a conseqüència, per a cada bloc funcional s'hauria de crear un únic proje
 
 Per poder traçar el concepte de bloc funcional a través de totes les capes, en el repositori de codi font, els diferents components del projecte s’estructuraran dins d'un mateix projecte GIT organitzats en carpetes. S'hauria de crear una carpeta per al codi de la part front i una altra per la part back. A més, s'hauria de crear una carpeta per a la configuració que hauria de contenir les plantilles i les configuracions dels components d'infraestructura dels que està compost el bloc funcional. Això té com a conseqüència que les capes front i back del mateix bloc funcional tindran el mateix cicle de vida a nivell de desenvolupament, versionat i desplegament. Un exemple de l'organització d'un projecte GIT d'un bloc funcional podria ser la següent:
 
-![Estructura de projecte](/images/img8.png)
+![Estructura de projecte](/images/img8.png =200x)
 
 | Avantatges      | Desavantatges |
 | ----------- | ----------- |
@@ -152,7 +152,7 @@ A la següent imatge es mostra el model de desplegament d'un bloc funcional amb:
 * Un microfrontend en Angular que es desplega en un Volum Persistent muntat al contenidor Nginx que serveix el frontal
 * Un microservei en Java amb Spring Boot que es desplega en un POD independent
 
-![Model de desplegament](/images/img11.png)
+![Model de desplegament](/images/img11.png =350x)
 
 
 ## <a name="arquitectura-tecnica"></a>4 Arquitectura tècnica 
@@ -323,7 +323,7 @@ De forma general, en aquest apartat s'utilitzaran les eines descrites amb detall
 
 ### 4.3 Disseny físic
 
-El disseny físic identifica i descriu els components que formen part o integren el sistema, i com aquests es configuren o interactuen. Aquest disseny físic és la implementació de el disseny lògic basat en cloud públic d’Azure.
+El disseny físic identifica i descriu els components que formen part o integren el sistema, i com aquests es configuren o interactuen. Aquest disseny físic és la implementació del disseny lògic basat en cloud públic d’Azure.
 
 ![Disseny físic basat en Azure](/images/img30.png)
 
