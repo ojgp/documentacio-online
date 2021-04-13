@@ -152,7 +152,7 @@ A la següent imatge es mostra el model de desplegament d'un bloc funcional amb:
 * Un microfrontend en Angular que es desplega en un Volum Persistent muntat al contenidor Nginx que serveix el frontal
 * Un microservei en Java amb Spring Boot que es desplega en un POD independent
 
-<img src="/images/img8.png" alt="Model de desplegament" width="45%" />
+<img src="/images/img11.png" alt="Model de desplegament" width="45%" />
 
 
 ## <a name="arquitectura-tecnica"></a>4 Arquitectura tècnica 
