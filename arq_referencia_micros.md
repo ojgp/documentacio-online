@@ -78,7 +78,7 @@ Per a cada bloc funcional, el desenvolupament hauria de seguir una metodologia B
 
 Com a conseqüència, per a cada bloc funcional s'hauria de crear un únic projecte, que contindrà tant la part front com la part back. Això té l'avantatge que cada bloc funcional podria ser desenvolupat per equips diferents i independents. A més, cada bloc funcional hauria de disposar de la seva pròpia base de dades.
 
-![Patró Backend for frontend](/images/img7.png =500x)
+![Patró Backend for frontend](/images/img7.png)
 
 * **Frontend**: Conjunt de micro-frontends que proporcionen les funcionalitats del bloc al usuari.
 	* Només accedeix al seu backend.
@@ -91,7 +91,7 @@ Com a conseqüència, per a cada bloc funcional s'hauria de crear un únic proje
 
 Per poder traçar el concepte de bloc funcional a través de totes les capes, en el repositori de codi font, els diferents components del projecte s’estructuraran dins d'un mateix projecte GIT organitzats en carpetes. S'hauria de crear una carpeta per al codi de la part front i una altra per la part back. A més, s'hauria de crear una carpeta per a la configuració que hauria de contenir les plantilles i les configuracions dels components d'infraestructura dels que està compost el bloc funcional. Això té com a conseqüència que les capes front i back del mateix bloc funcional tindran el mateix cicle de vida a nivell de desenvolupament, versionat i desplegament. Un exemple de l'organització d'un projecte GIT d'un bloc funcional podria ser la següent:
 
-![Estructura de projecte](/images/img8.png =250x)
+![Estructura de projecte](/images/img8.png)
 
 | Avantatges      | Desavantatges |
 | ----------- | ----------- |
@@ -152,7 +152,7 @@ A la següent imatge es mostra el model de desplegament d'un bloc funcional amb:
 * Un microfrontend en Angular que es desplega en un Volum Persistent muntat al contenidor Nginx que serveix el frontal
 * Un microservei en Java amb Spring Boot que es desplega en un POD independent
 
-![Model de desplegament](/images/img11.png =350x)
+![Model de desplegament](/images/img11.png)
 
 
 ## <a name="arquitectura-tecnica"></a>4 Arquitectura tècnica 
