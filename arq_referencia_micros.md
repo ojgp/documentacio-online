@@ -2,9 +2,7 @@
 
 ## Introducció
 
-Davant la ràpida evolució dels estils d’arquitecturals, CTTI identifica la necessitat d’establir una arquitectura de referència per aquelles aplicacions que opten per arquitectures altament distribuïdes tant a nivell lògic com a nivell físic. 
-
-CTTI vol disposar d’una arquitectura de referència orientada al desplegament d’aplicacions en microserveis, microfrontends i funcions el que implica habilitar un ecosistema de components addicionals que suportin aquest estil d’arquitectura. Aquesta arquitectura de referència ha de permetre homogeneïtzar l’aplicació d’aquest tipus d’arquitectures entre els diferents proveïdors evitant, d’aquesta forma, la dispersió tecnològica. 
+Davant la ràpida evolució dels estils d’arquitecturals, s'ha identificat la necessitat d’establir una arquitectura de referència per aquelles aplicacions que opten per arquitectures altament distribuïdes tant a nivell lògic com a nivell físic. L'arquitectura presentada en aquesta pàgina s'orienta al desplegament d'aplicacions en microserveis i microfrontends de forma que un arquitecte la pugui usar com a punt de partida per fer el disseny d'una solució.
 
 ### Conceptualització de l’arquitectura de referència
 
